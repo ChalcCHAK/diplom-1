@@ -4765,6 +4765,11 @@ section {
 	padding-right:0;
 } 
 }
+.lishki{
+	cursor: pointer;
+	color: #C19D60;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 	.bg {
 		background-attachment: scroll !important;
