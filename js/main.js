@@ -52,10 +52,10 @@ function getTimeRemaining(endtime){
 }
 function setClock(selector, endtime){
     const timer = document.querySelector(selector),
-        days = document.querySelector('.days'),
-        hours = document.querySelector('.hours'),
-        minutes = document.querySelector('.minutes'),
-        seconds = document.querySelector('.seconds');
+        days = document.querySelector('#days'),
+        hours = document.querySelector('#hours'),
+        minutes = document.querySelector('#minutes'),
+        seconds = document.querySelector('#seconds');
         timeInterval = setInterval(updateClock,1000);
     updateClock();
     function updateClock(){
