@@ -33,49 +33,90 @@ tabParent.addEventListener('click',(event)=>{
 });
 console.log(tabContent);
 
-//timer//
-const timeEnd = '2024-02-19';
-
-function getTimeRemaining(endtime){
-    const t = Date.purse(endtime) - Date.purse(new Date()),
-        days = Math.floor(t/(1000*60*60*24)),
-        hours = Math.floor((t/(1000*60*60))%24),
-        minutes = Math.floor((t/(1000*60*60))%60),
-        seconds =  Math.floor((t/(1000))%60);
-    return{
-            'total':t,
-            'days':days,
-            'hours': hours,
-            'minutes':minutes,
-            'seconds':seconds
-        }
-}
-function setClock(selector, endtime){
-    const timer = document.querySelector(selector),
-        days = document.querySelector('#days'),
-        hours = document.querySelector('#hours'),
-        minutes = document.querySelector('#minutes'),
-        seconds = document.querySelector('#seconds');
-        timeInterval = setInterval(updateClock,1000);
-    updateClock();
-    function updateClock(){
-        const t = getTimeRemaining(endtime);
-        days.innerHTML = t.days;
-        hours.innerHTML = t.hours;
-        minutes.innerHTML = t.minutes;
-        seconds.innerHTML = t.seconds;
-        if(t.total<=0){
-            clearInterval()
-            days.innerHTML = "00";
-            hours.innerHTML = "00";
-            minutes.innerHTML = "00";
-            seconds.innerHTML = "00";
-        }
-    }
-}
-updateClock('.timer',timeEnd);
 
 //slidd
+const slides = document.querySelectorAll('.swiper-slide'),
+prev = document.querySelector('.ec-button-prev'),
+next = document.querySelector('.ec-button-next');
+
+let = slideIdex = 1;
+
+function showSlides(n){
+    if(n>slides.length){
+        slideIndex = 1;
+    }
+    if(n<1){
+        slideIndex = slides.length;
+    }
+    if(slides.length <10){
+        total.textContent = 0${slides.length};
+    }else{
+        total.textContent = slides.length;
+    }
+    slides.forEach(item=> item.style.display="none");
+    slides[slideIndex-1].style.display ="block";
+
+    if(slides.length<10){
+        current.textContent = 0${slideIndex};
+    }else{
+        current.textContent = slideIndex;
+    }
+}
+showSlides(slideIdex);
+
+function plusSlides(n){
+    showSlides(slideIdex = slideIdex+n);
+}
+next.addEventListener('click',()=>{
+    plusSlides()
+})
+prev.addEventListener('click',()=>{
+    plusSlides()
+})
+
+//sliderr
+const2 slidestwo = document.querySelectorAll('.slide-two'),
+prev2 = document.querySelector('.tc-button-prev'),
+next2 = document.querySelector('.tc-button-next');
+
+let slideIndex2 = 1;
+
+function showSlides(n){
+    if(n>slide-two.length){
+        slideIndex2 = 1;
+    }
+    if(n<1){
+        slideIndex2 = slidetwo.length;
+    }
+    if(slides.length <10){
+        total.textContent = 0${slidestwo.length};
+    }else{
+        total.textContent = slidestwo.length;
+    }
+    slidetwo.forEach(item=> item.style.display="none");
+    slidestwo[slideIndex2-1].style.display="block";
+
+    if(slidestwo.length<10){
+        current.textContent = 0${slideIndex2};
+    }else{
+        current.textContent = slideIndex2;
+    }
+}
+showSlides(slideIndex2);
+showSlides(slideIdex2);
+
+function plusSlides(n){
+    showSlides(slideIdex2 = slideIdex2+n);
+}
+next.addEventListener('click',()=>{
+    plusSlides()
+})
+prev.addEventListener('click',()=>{
+    plusSlides()
+})
+
+
+
 
 
 
