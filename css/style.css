@@ -4769,6 +4769,13 @@ section {
 	cursor: pointer;
 	color: #C19D60;
 }
+.gth>.lishki{
+	color: #000;
+}
+.gth>.current{
+	columns: #C19D60;
+	cursor: pointer;
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 	.bg {
